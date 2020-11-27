@@ -47,7 +47,7 @@ void loop() {
       Ser.println("  ?     : Show this help menu");
       Ser.println("  p?    : Get the period of energizing the relay in ms");
       Ser.println("  p#### : Set the period of energizing the relay in ms");
-      Ser.println("  {else}: energize the relay for the set period");
+      Ser.println("  e     : energize the relay for the set period");
 
     } else if (strcmp(strCmd, "p?") == 0) {
       Ser.print("energize period [ms]: ");
@@ -60,7 +60,7 @@ void loop() {
       Ser.print("energize period [ms]: ");
       Ser.println(energize_period);
 
-    } else {
+    } else if (strcmp(strCmd, "e") == 0) {
       state_relay_1 = true;
     }
   }
